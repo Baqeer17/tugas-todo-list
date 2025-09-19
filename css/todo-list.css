@@ -1,0 +1,141 @@
+:root {
+    --bg-dark: #373737;
+    --container-bg: #660808;
+    --primary-text: #F2F2F2;
+    --input-bg: #FFFFFF;
+    --input-text: #660808;
+    --btn-add-bg: #808080;
+    --btn-add-text: #000000;
+    --btn-delete-all-bg: #A52A2A;
+    --btn-delete-item-bg: #E57373;
+    --btn-status-pending-bg: #81D4FA;
+    --btn-status-pending-text: #1A237E;
+    --btn-status-completed-bg: #A5D6A7;
+    --text-completed: #B0BEC5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--primary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    background-color: var(--container-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+form input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--btn-status-pending-bg);
+}
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.add-btn {
+    background-color: var(--btn-add-bg);
+    color: var(--btn-add-text);
+    font-size: 1.2rem;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#filter-btn {
+    border: 1px solid var(--primary-text);
+    background-color: transparent;
+    color: var(--primary-text);
+    padding: 0.5rem 1rem;
+}
+
+#delete-all-btn {
+    background-color: var(--btn-delete-all-bg);
+    color: var(--primary-text);
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+}
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.todo-table th,
+.todo-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.todo-table thead {
+    color: var(--primary-text);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.todo-table button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.delete-btn {
+    background-color: var(--btn-delete-item-bg);
+    color: var(--primary-text);
+}
+
+.status-btn {
+    background-color: var(--btn-status-pending-bg);
+    color: var(--btn-status-pending-text);
+}
+
+.todo-table tr.completed td {
+    text-decoration: line-through;
+    color: var(--text-completed);
+}
